@@ -1,0 +1,25 @@
+<ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="#"><span *ngIf="loading">Loading</span></a>
+  </li>
+  
+  <li class="nav-item">
+    <a (click)="openModalInsert($event)" class="nav-link active" href><i class="fa fa-plus" aria-hidden="true"></i> New Product</a>
+  </li>
+</ul>
+<div *ngFor="let alert of alerts">
+  <alert [type]="alert.type" [dismissOnTimeout]="alert.timeout">{{ alert.msg }}</alert>
+</div>
+<table class="table ">  
+  <thead class="thead-default">
+    <tr> 
+    <th>Description</th> 
+    <th>Price</th>
+    <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of productList" [product]="product" app-products-list-item>
+    </tr> 
+  </tbody>
+</table>

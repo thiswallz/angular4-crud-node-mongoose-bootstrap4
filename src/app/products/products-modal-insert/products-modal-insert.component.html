@@ -1,0 +1,36 @@
+<div class="modal-header">
+    <h3 class="modal-title pull-left">{{title}}</h3>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form novalidate [formGroup]="modalForm">
+      <div class="form-row">
+        <div class="form-group col-md-6" > 
+          <label for="inputDescription" class="col-form-label">Description</label>
+          <input [(ngModel)]="product.description" formControlName="description" type="text" class="form-control" [ngClass]="{
+            'is-invalid': modalForm.controls.description.invalid && (modalForm.controls.description.dirty || modalForm.controls.description.touched),
+            'is-valid': modalForm.controls.description.valid && (modalForm.controls.description.dirty || modalForm.controls.description.touched)
+          }">
+          <div *ngIf="modalForm.controls.description.invalid && (modalForm.controls.description.dirty || modalForm.controls.description.touched)" class="invalid-feedback">
+              Please provide a valid description
+          </div>
+        </div>
+        <div class="form-group col-md-6">
+          <label  class="col-form-label">Price</label>
+          <input [(ngModel)]="product.price" formControlName="price" type="number" class="form-control" [ngClass]="{
+            'is-invalid': modalForm.controls.price.invalid && (modalForm.controls.price.dirty || modalForm.controls.price.touched),
+            'is-valid': modalForm.controls.price.valid && (modalForm.controls.price.dirty || modalForm.controls.price.touched)
+          }">
+          <div *ngIf="modalForm.controls.price.invalid && (modalForm.controls.price.dirty || modalForm.controls.price.touched)" class="invalid-feedback">
+              Please provide a valid price
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-danger" (click)="bsModalRef.hide()">Close</button>
+    <button type="button" class="btn btn-outline-primary" (click)="onClickSave()" [disabled]="!modalForm.valid">Save Product</button>
+  </div>
