@@ -20,8 +20,7 @@ WebApp port: 4200
 WebApp running
 
 
-![Alt text](img2.png?raw=true "Home")
-
-![Alt text](img.png?raw=true "Demo")
-![Alt text](img3.png?raw=true "Demo")
-![Alt text](img4.png?raw=true "Demo")
+![Alt text](img2.PNG?raw=true "Home")  
+![Alt text](img.PNG?raw=true "Demo")  
+![Alt text](img3.PNG?raw=true "Demo")  
+![Alt text](img4.PNG?raw=true "Demo")  
